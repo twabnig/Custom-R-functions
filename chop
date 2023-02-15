@@ -1,0 +1,40 @@
+chop <- function(x,y){
+if(missing(y)) {
+         y=0.75
+     }
+x <- na.omit(x)
+rows <- 1:nrow(x)
+sampling <- sample(rows, ceiling(length(rows)*0.75))
+traind <<- x[sampling, ]
+testd <<- x[-sampling, ]
+print("Objects: 'traind', and 'testd' for your dataset can now be used.")
+print(paste("Rows of Training data:", nrow(traind)))
+print(paste("Rows of Test data:", nrow(testd)))
+}
+
+
+
+## EXAMPLES
+
+pacman::p_load(palmerpenguins,gapminder)
+
+
+chop(iris)
+nrow(traind)
+nrow(testd)
+
+chop(mtcars)
+nrow(traind)
+nrow(testd)
+
+chop(penguins)
+nrow(traind)
+nrow(testd)
+
+chop(gapminder)
+nrow(traind)
+nrow(testd)
+
+head(traind)
+head(testd)
+
