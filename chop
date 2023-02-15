@@ -4,7 +4,7 @@ if(missing(y)) {
      }
 x <- na.omit(x)
 rows <- 1:nrow(x)
-sampling <- sample(rows, ceiling(length(rows)*0.75))
+sampling <- sample(rows, ceiling(length(rows)*y))
 traind <<- x[sampling, ]
 testd <<- x[-sampling, ]
 print("Objects: 'traind', and 'testd' for your dataset can now be used.")
